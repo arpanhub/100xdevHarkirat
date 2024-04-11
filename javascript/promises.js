@@ -1,17 +1,17 @@
 //=>pending,resolved
-/* var d = new Promise(function(resolve){
-    resolve("helllo");
-    setTimeout(function(){
-        resolve("hello");
-    },1000) 
-}); */
-/* function callback(){
+var d = new Promise(function(resolve){
+    // resolve("helllo");
+    // setTimeout(function(){
+    //     resolve("hello");
+    // },1000) 
+}); 
+function callback(){
     console.log(d);
-} */
-// console.log(d);
-/* d.then(function(){
+} 
+ console.log(d);
+d.then(function(){
     console.log(d);
-}); */
+});
 
 
 
@@ -32,7 +32,7 @@ main(); */
 
 //---------------------------------------------
 // Cleaner version
-function ArpanAsyncFunction(){
+/* function ArpanAsyncFunction(){
     let p=new Promise(function(resolve){
         setTimeout(function(){
             resolve("hi there");
@@ -46,3 +46,4 @@ async function main(){
    console.log(value);
 }  
 main();
+ */
