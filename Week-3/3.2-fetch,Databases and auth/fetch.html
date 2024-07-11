@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fetchAPI(){
+            fetch("https://fakerapi.it/api/v1/persons")
+            .then(async function(response){
+                console.log(response);
+                const data = await response.json();
+                console.log(data);
+            })
+        }
+        /* function fetchAPI(){
+            fetch("https://fakerapi.it/api/v1/persons")
+            .then(function(response){
+                response.json()
+         2       .then(function(finalData){
+                    console.log(finalData);
+                })
+            })
+            .then(data => console.log(data))
+        } */
+    </script>
+</head>
+<body>
+    <button onclick="fetchAPI()">click to see data</button>
+</body>
+</html>
