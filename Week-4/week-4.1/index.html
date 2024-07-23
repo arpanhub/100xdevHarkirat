@@ -1,0 +1,32 @@
+<!-- Fixed code for using the fetch API to get the interest and total amount from the server -->
+
+<html>
+    <head>
+
+    </head>
+    <script>
+        let time=null;
+        function debounceCalc(){
+            clearTimeout(time);
+            time = setTimeout(function(){
+                calc()
+            }, 1000);
+        }
+       async function calc(){
+            const principal = document.getElementById("principal").value;
+            const rate = document.getElementById("rate").value;
+            const time = document.getElementById("time").value;
+            const response = await fetch(`https://sum-server.100xdevs.com/interest?principal=${principal}&rate=${rate}&time=${time}`);
+            const data = await response.json();
+            document.getElementById("total").innerHTML = "Total: " + data.total;
+            document.getElementById("interest").innerHTML = "Interest: " + data.interest;
+        }
+    </script>
+    <body>
+        <input oninput="debounceCalc()" type="text" id="principal" placeholder="Principal">
+        <input oninput="debounceCalc()" type="text" id="rate" placeholder="Rate">
+        <input oninput="debounceCalc()" type="text" id="time" placeholder="Time">
+        <p id="total"> </p>
+        <p id="interest"></p>
+    </body>
+</html>
