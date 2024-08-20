@@ -5,6 +5,7 @@ const {JWT_SECRET} = require("../config");
 const router = Router();
 const jwt = require("jsonwebtoken");
 
+
 // Admin Routes
 router.post('/signup', async (req, res) => {
     // Implement admin signup logic
