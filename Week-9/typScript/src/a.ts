@@ -1,5 +1,5 @@
 
-/* 
+/* \
 function isLegal(user:{
     firstName:string,
     lastName:string,
